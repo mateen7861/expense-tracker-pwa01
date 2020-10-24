@@ -4,7 +4,7 @@ type Actions =
 | {type: "add", transaction: TransactionType}
 | {type: "delete", id: number}
 
-export default (state: { transactions: TransactionType[]; }, action: Actions ) => {
+ const reducer=(state: { transactions: TransactionType[]; }, action: Actions ) => {
     switch(action.type) {
         case 'delete':
             return {
@@ -19,3 +19,4 @@ export default (state: { transactions: TransactionType[]; }, action: Actions ) =
             return state;
     }
 }
+export default reducer
