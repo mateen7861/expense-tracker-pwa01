@@ -3,7 +3,7 @@ import { GlobalContext } from "../context/GlobalContext";
 
 const NewTransaction = () => {
     const { addTransaction } = useContext(GlobalContext);
-    let amount: number | string = "";
+    let amount: number
     // Local Context
     const [title, setTitle] = useState<string>("");
     // const [amount, setAmount] = useState(0);
