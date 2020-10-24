@@ -3,7 +3,7 @@ import AppReducer from "./AppReducer";
 import { TransactionType } from "../Types";
 
 const startingState = {
-    transactions: [{ id: 1, title: "Salary", amount: 90000 }],
+    transactions: [{ id: 1, title: "Salary", amount: 5000 }],
     deleteTransaction: (id: number) => { },
     addTransaction: (transaction: TransactionType) => { },
 };

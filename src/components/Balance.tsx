@@ -1,10 +1,11 @@
 import React, { useContext } from "react";
 import { GlobalContext } from "../context/GlobalContext";
+import NumberFormat from 'react-number-format';
+
 
 export const Balance = () => {
     const { transactions } = useContext(GlobalContext);
 
-    // Calculate balance
     const transactioAmounts = transactions.map(
         (transaction) => transaction.amount
     );
@@ -13,7 +14,8 @@ export const Balance = () => {
     return (
         <>
             <h4>Your Balance</h4>
-            <h1>PKR {balance}</h1>
+            <h1><NumberFormat value={balance} displayType={'text'} thousandSeparator={true} prefix={'$'} />
+            </h1>
         </>
     );
 };

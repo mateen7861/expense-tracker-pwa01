@@ -1,10 +1,10 @@
 import React, { useContext } from "react";
 import { GlobalContext } from "../context/GlobalContext";
+import NumberFormat from 'react-number-format';
 
 export const IncomeExpenses: React.FC = () => {
     const { transactions } = useContext(GlobalContext);
 
-    // Calculate income and expenses
     const transactioAmounts = transactions.map(
         (transaction) => transaction.amount
     );
@@ -20,11 +20,11 @@ export const IncomeExpenses: React.FC = () => {
             <div className="inc-exp-container">
                 <div>
                     <h4>Income</h4>
-                    <p className="money plus">PKR {income}</p>
+                    <p className="money plus"><NumberFormat value={income} displayType={'text'} thousandSeparator={true} prefix={'$'} /></p>
                 </div>
                 <div>
                     <h4>Expense</h4>
-                    <p className="money minus">PKR {expense}</p>
+                    <p className="money minus"><NumberFormat value={expense} displayType={'text'} thousandSeparator={true} prefix={'$'} /></p>
                 </div>
             </div>
         </div>

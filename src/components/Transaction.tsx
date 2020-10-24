@@ -1,4 +1,5 @@
 import React, { useContext } from "react";
+import NumberFormat from "react-number-format";
 
 import { GlobalContext } from "../context/GlobalContext";
 import { TransactionType } from "../Types";
@@ -12,7 +13,7 @@ const Transaction: React.FC<TransactionType> = ({ id, title, amount }) => {
         <li className={amount > 0 ? "plus" : "minus"}>
             {title}
             <span>
-                {sign}PKR {Math.abs(amount)}
+                {sign}<NumberFormat value={Math.abs(amount)} displayType={'text'} thousandSeparator={true} prefix={'$'} />
             </span>
             <button onClick={() => deleteTransaction(id)} className="delete-btn">
                 x

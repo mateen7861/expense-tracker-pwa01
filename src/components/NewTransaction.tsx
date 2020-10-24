@@ -4,11 +4,9 @@ import { GlobalContext } from "../context/GlobalContext";
 const NewTransaction = () => {
     const { addTransaction } = useContext(GlobalContext);
     // let amount: number | string = "";
-    // Local Context
     const [title, setTitle] = useState<string>("");
     const [amount, setAmount] = useState<number | string>("");
 
-    // Create transaction on form submit
     const onSubmit = (e: { preventDefault: () => void }) => {
         e.preventDefault();
 

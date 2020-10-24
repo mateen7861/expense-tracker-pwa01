@@ -5,6 +5,6 @@ export type TransactionType = {
   };
   
   export type TransactionsArray = {
-    transactions?: TransactionType[];
+    transactions: TransactionType[];
   };
   
